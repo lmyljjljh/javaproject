@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+		PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"
+		"http://myBatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.lmy.mapper.CategoryMapper">
+	<!-- �?对多：查看某�?商品类别及其关联的商品信�?
+    	          注意：当关联查询出的列名相同，则�?要使用别名区�? -->
+
+	<select id="findCategoryWithProduct" parameterType="Integer" resultMap="CategoryWithProductResult">
+		select c.*,p.id as category_id,p.goodsname,p.price
+		from category c,product p
+		where c.id=p.category_id
+		and c.id=#{id}
+	</select>
+
+	<resultMap id="CategoryWithProductResult" type="com.lmy.pojo.Category">
+		<id property="id" column="id"/>
+		<result property="typename" column="typename"/>
+		<collection property="productList" ofType="com.lmy.pojo.Product">
+			<id property="id" column="category_id"/>
+			<result property="goodsname" column="goodsname"/>
+			<result property="price" column="price"/>
+		</collection>
+	</resultMap>
+</mapper>
