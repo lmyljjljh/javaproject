@@ -1,0 +1,12 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+          http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <!-- 定义一个id为helloSpring的Bean，指定其class为com.itheima.HelloSpring -->
+    <bean id="helloSpring" class="com.lmy.HelloSpring">
+        <!-- 设置helloSpring的userName属性为"张三" -->
+        <property name="userName" value="张三"/>
+    </bean>
+
+</beans>
