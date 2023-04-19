@@ -6,7 +6,7 @@
     <!-- 定义一个id为helloSpring的Bean，指定其class为com.itheima.HelloSpring -->
     <bean id="helloSpring" class="com.lmy.HelloSpring">
         <!-- 设置helloSpring的userName属性为"张三" -->
-        <property name="userName" value="张三"/>
+        <property name="userName" value="李梦圆"/>
     </bean>
 
 </beans>
